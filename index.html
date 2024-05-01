@@ -73,63 +73,128 @@
     </span>
 
     <section>
-        <img  class="img"  id="img2" src="img/soluçoes.jpg" alt="sub-logo">
-    </section>
+      <img  class="img"  id="img2" src="img/soluçoes.jpg" alt="sub-logo">
+  </section>
 
-    <section class="bloco1">
 
-      <div class="bloco">
-        <img class="redondo" src="img/icon-soluçoes.png" alt="1°">
-        <h2>Diagnóstico <br>
-          Organizacional</h2>
-      </div>
+  <section class="bloco1">
 
-      <div class="bloco">
-        <img class="redondo" src="img/icon-soluçoes.png" alt="1°">
-        <h2>Implantações <br>
-          de RH</h2>
-      </div>
+    <div class="bloco" onclick="mostrarPopup('Diagnóstico Organizacional');">
+      <img onclick="openWindow1()" class="redondo" src="img/icon-soluçoes.png" alt="1°">
+      <h2>Diagnóstico <br>
+        Organizacional</h2>
+    </div>
 
-      <div class="bloco">
-        <img class="redondo" src="img/icon-soluçoes.png" alt="1°">
-        <h2>Clima <br>
-          Organizacional</h2>
-      </div>
+    <div class="bloco">
+      <img class="redondo" src="img/icon-soluçoes.png" alt="1°">
+      <h2>Implantações <br>
+        de RH</h2>
+    </div>
 
-      <div class="bloco">
-        <img class="redondo" src="img/icon-soluçoes.png" alt="1°">
-        <h2>Consultoria <br>
-          em RH</h2>
-      </div>
+    <div class="bloco">
+      <img class="redondo" src="img/icon-soluçoes.png" alt="1°">
+      <h2>Clima <br>
+        Organizacional</h2>
+    </div>
 
-      <div class="bloco">
-        <img class="redondo" src="img/icon-soluçoes.png" alt="1°">
-        <h2>Recrutamento <br>
-          e Seleção</h2>
-      </div>
+    <div class="bloco">
+      <img class="redondo" src="img/icon-soluçoes.png" alt="1°">
+      <h2>Consultoria <br>
+        em RH</h2>
+    </div>
 
-      <div class="bloco">
-        <img class="redondo" src="img/icon-soluçoes.png" alt="1°">
-        <h2>Treinamento <br>
-          Comportamental</h2>
-      </div>
+    <div class="bloco">
+      <img class="redondo" src="img/icon-soluçoes.png" alt="1°">
+      <h2>Recrutamento <br>
+        e Seleção</h2>
+    </div>
 
-      <div class="bloco">
-        <img class="redondo" src="img/icon-soluçoes.png" alt="1°">
-        <h2>Elaboração <br>
-          de Currículo</h2>
-      </div>
+    <div class="bloco">
+      <img class="redondo" src="img/icon-soluçoes.png" alt="1°">
+      <h2>Treinamento <br>
+        Comportamental</h2>
+    </div>
 
-      <div class="bloco">
-        <img class="redondo" src="img/icon-soluçoes.png" alt="1°">
-        <h2>Divulgação de <br>
-          Vagas de emprego</h2>
-      </div>
+    <div class="bloco">
+      <img class="redondo" src="img/icon-soluçoes.png" alt="1°">
+      <h2>Elaboração <br>
+        de Currículo</h2>
+    </div>
 
-    </section>
+    <div class="bloco">
+      <img class="redondo" src="img/icon-soluçoes.png" alt="1°">
+      <h2>Divulgação de <br>
+        Vagas de emprego</h2>
+    </div>
+
+  </section>
+
+  <script>
+    // Função para abrir janela flutuante com título e conteúdo
+    function openWindow1() {
+        var title = "Título do Artigo 1";
+        var content = "Conteúdo do Artigo 1. ";
+        content += "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ";
+        content += "Nulla facilisi. Duis ut augue ac massa commodo aliquet. ";
+        content += "Vestibulum nec est vitae odio tincidunt interdum.";
+
+        var windowContent = `
+            <div class="window-container" onclick="closeWindow()">
+                <div class="window" onclick="event.stopPropagation()">
+                    <span class="close-btn" onclick="closeWindow()">X</span>
+                    <h2>${title}</h2>
+                    <p>${content}</p>
+                </div>
+            </div>
+        `;
+
+        var newWindow = document.createElement('div'); // Crie um novo elemento div
+        newWindow.innerHTML = windowContent; // Defina o conteúdo da div como a janela flutuante
+        document.body.appendChild(newWindow); // Adicione a div ao corpo do documento
+        newWindow.querySelector('.window-container').style.display = 'block'; // Exiba a janela
+    }
+
+    // Função para abrir outra janela flutuante com título e conteúdo diferente
+    function openWindow2() {
+        var title = "Título do Artigo 2";
+        var content = "Conteúdo do Artigo 2. ";
+        content += "Sed euismod consequat lectus, sit amet ultrices sem sodales ut. ";
+        content += "Pellentesque pharetra leo sed magna porta, ut ullamcorper nisi convallis. ";
+        content += "Donec nec sem et orci pharetra dignissim.";
+
+        var windowContent = `
+            <div class="window-container" onclick="closeWindow()">
+                <div class="window" onclick="event.stopPropagation()">
+                    <span class="close-btn" onclick="closeWindow()">X</span>
+                    <h2>${title}</h2>
+                    <p>${content}</p>
+                </div>
+            </div>
+        `;
+
+        var newWindow = document.createElement('div'); // Crie um novo elemento div
+        newWindow.innerHTML = windowContent; // Defina o conteúdo da div como a janela flutuante
+        document.body.appendChild(newWindow); // Adicione a div ao corpo do documento
+        newWindow.querySelector('.window-container').style.display = 'block'; // Exiba a janela
+    }
+
+    // Função para fechar a janela
+    function closeWindow() {
+        var windowContainer = document.querySelector('.window-container');
+        windowContainer.remove(); // Remova a janela
+    }
+
+    // Função para fechar a janela ao clicar fora dela
+    window.addEventListener('click', function(event) {
+        if (event.target.classList.contains('window-container')) {
+            closeWindow();
+        }
+    });
+</script>
+
   </main>
 
-  <footer class="contato">
+  <footer>
     <h2>Contato</h2>
   </footer>
 
@@ -143,7 +208,7 @@
     <input type="submit" value="Enviar">
   </form>
 
-  <footer>
+  <footer class="contato">
     <div class="footer-container">
       <div class="footer-item">
         <a href=""><img src="img/icon-zap.png" alt="WhatsApp"></a>
