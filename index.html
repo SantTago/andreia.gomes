@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Andreia Gomes</title>
+  <link rel="icon" href="caminho/para/seu-favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="#" onclick="showSection('Dr.Eulalia')">Home</a>
+    <a href="contato.html" onclick="showSection('Dr.Eulalia')">Contato</a>
+    <a href="agendamentos.html" onclick="showSection('Dr.Eulalia')">Sobre</a>
+    <a href="serviços.html" onclick="showSection('Dr.Eulalia')">Soluções</a>
+    <a href="#" class="close-btn" onclick="closeMenu()">&larr; Contato</a>
+  </div>
+  <!-- Cabeçalho -->
+  <header class="logomarca">
+    <div class="open-btn" onclick="toggleMenu()">&#9776;</div>
+    <div class="titulo">
+      <img src="img/logo.png" alt="Eulalia">
+    </div>
+    
+  
+    <nav class="header-menu">
+      <a href="#" onclick="showSection('Dr.Eulalia')">Home</a>
+      <a href="contato.html" onclick="showSection('Dr.Eulalia')">Sobre</a>
+      <a href="agendamentos.html">Soluçôes</a>
+      <a href="serviços.html" onclick="showSection('Dr.Eulalia')">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <img class="img" src="img/sub-logo.jpg" alt="sub-logo">
+    </section>
+    <div class="botoes">
+        <button>ABRIR EMPRESA</button>
+        <button>MIGRAR EMPRESA</button>
+        <button>MIGRAR EMPRESA</button>
+    </div>
+    <section>
+        <img class="img-sobre" src="img/sub-sobre.jpg" alt="sub-logo">
+      </section>
+
+    <span>
+        <h2 class="nos">Sobre nós</h2>
+        <br>
+        <h2 class="nosso-foco">
+            Nosso foco é prestar <br>
+            serviço com <br>
+            qualidade, segurança <br>
+            e praticidade
+        </h2>
+        <h3 class="somos">Somos uma equipe especializada em contabilidade e 
+            recursos humanos, dedicada a oferecer soluções eficientes 
+            para empresas. Com vasta experiência e profissionalismo, 
+            estamos aqui para ajudar você a gerenciar suas finanças e 
+            equipe de forma eficaz. Conte conosco para contabilidade, 
+            gestão de pessoas, treinamentos e vagas de emprego.</h3>
+
+    </span>
+  </main>
+
+
+  <script>
+    var menuAberto = false;
+
+    function toggleMenu() {
+      var sidebar = document.getElementById('sidebar');
+
+      if (!menuAberto) {
+        sidebar.style.left = '0px';
+        menuAberto = true;
+      } else {
+        sidebar.style.left = '-200px';
+        menuAberto = false;
+      }
+    }
+
+    function closeMenu() {
+      var sidebar = document.getElementById('sidebar');
+      sidebar.style.left = '-200px';
+      menuAberto = false;
+    }
+
+    document.addEventListener('click', function (event) {
+      var sidebar = document.getElementById('sidebar');
+      if (!event.target.closest('.open-btn') && !event.target.closest('.sidebar')) {
+        sidebar.style.left = '-200px';
+        menuAberto = false;
+      }
+    });
+
+    // Adiciona evento de clique ao ícone do menu para mostrar as opções no modo PC
+    var openBtn = document.querySelector('.open-btn');
+    var headerMenu = document.querySelector('.header-menu');
+
+    openBtn.addEventListener('click', function() {
+      headerMenu.classList.toggle('menu-opened');
+    });
+  </script>
+ 
+  <!------------------------------------------------------------------>
+ 
+  <!------------------------------------------------------------------>
+</body>
+</html>
