@@ -315,6 +315,9 @@
         height: auto;
        
       }
+      #img2{
+        margin-bottom: 40px;
+      }
 
       .img-sobre {
         flex: 1;
@@ -391,9 +394,10 @@
           color: #EAEAEA;
           display: inline-block;
           text-align: center;
-          padding: 10px;
+          padding: 15px;
           border-radius: 27px;
           box-shadow: 1px 2px 0px #16224E;
+          transition: 0.380s;
          
         }
         
@@ -413,7 +417,43 @@
           margin-top: -11px;
         }
 
+        form {
+          max-width: 400px;
+          margin: 0 auto;
+          padding: 20px;
+          background-color: #ffffff; /* Cor do fundo do formulário */
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input[type="text"], textarea {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          box-sizing: border-box; /* Faz com que o padding não aumente a largura do input */
+        }
+        textarea {
+          height: 100px; /* Altura do campo de texto */
+        }
+        input[type="submit"] {
+          background-color: #16224E; /* Cor do botão */
+          color: #ffffff; /* Cor do texto do botão */
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+        input[type="submit"]:hover {
+          background-color: #0D152A; /* Mudança de cor ao passar o mouse */
+        }
+
+        .contato{
+          margin-top: 40px;
         
+        }
+        
+
         footer {
           background: linear-gradient(to right, #16224E, #192552);
           color: #fff;
@@ -424,16 +464,15 @@
         .footer-container {
           display: flex;
           justify-content: center;
+          margin-bottom: 24px;
         }
-        
-        .footer-item {
-          margin: 0 10px;
-        }
+       
         
         .footer-item img {
-          width: 30px;
-          height: 30px;
+          width: 50px;
+          height: 50px;
           transition: transform 0.3s ease-in-out;
+          padding: 10px;
         }
         
         .footer-item img:hover {
