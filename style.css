@@ -339,7 +339,173 @@
           background-color: #16224E;
           color: white;
       }
+      .bloco1 {
+        display: inline-block;
+        text-align: center;
+        columns: 4;
+        margin: 0px 85px 0px 85px;
+    
+      }
+      .bloco{
+        display: inline-block;
+        text-align: center;
+        padding: 10px;
+        border-radius: 27px;
+        box-shadow: 1px 2px 0px black;
+        margin: 7px;
+      }
+      .bloco:hover{
+        background-color: #16224E;
+        color: #EAEAEA;
+        display: inline-block;
+        text-align: center;
+        padding: 3px;
+        border-radius: 27px;
+        box-shadow: 1px 2px 0px #16224E;
+        transition: 0.380s;
+       
+      }
+      
+      .redondo{
+        width: 200px;
+        height: 200px;
+        border-radius: 50px;
+        padding: 10px;
+        padding-bottom: 10px;
+      }
+      
+      .bloco > h2{
+        text-align: center;
+        /* font-size: 14px; */
+        padding-bottom: 10px;
+        padding-top: -5px;
+        margin-top: 15px;
+    
+      }
+      
+       .window-container {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: 9999;
+      }
 
+      .window {
+          width: 80%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: #16224E;
+          border: 1px solid #ccc;
+          border-radius: 8px;
+          padding: 20px;
+          max-width: 90%;
+          max-height: 90%;
+          overflow-y: auto;
+      }
+
+      .window h2 {
+        text-align: center;
+          font-size: 24px;
+          margin: 0 0 15px;
+        color: white;
+      }
+  
+      .window p {
+        text-align: center;
+          font-size: 16px;
+          line-height: 1.6;
+          margin: 0;
+          color: white;
+      }
+
+    
+      .close-btn {
+          color: white;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          font-size: 24px;
+          cursor: pointer;
+      }
+      form {
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff; /* Cor do fundo do formulário */
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+      input[type="text"], textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box; /* Faz com que o padding não aumente a largura do input */
+      }
+      textarea {
+        height: 100px; /* Altura do campo de texto */
+      }
+      input[type="submit"] {
+        background-color: #16224E; /* Cor do botão */
+        color: #ffffff; /* Cor do texto do botão */
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #0D152A; /* Mudança de cor ao passar o mouse */
+      }
+
+      .contato{
+        margin-top: 40px;
+      
+      }
+      
+
+      footer {
+        background: linear-gradient(to right, #16224E, #192552);
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+        margin-top: 45px;
+      }
+      
+      .footer-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 24px;
+      }
+     
+      
+      .footer-item img {
+        width: 50px;
+        height: 50px;
+        transition: transform 0.3s ease-in-out;
+        padding: 10px;
+      }
+      
+      .footer-item img:hover {
+        transform: scale(1.2);
+      }
+      
+      .footer-address, .footer-copyright {
+        margin-top: 10px;
+        font-size: 14px;
+      }
+      
+      .footer-copyright {
+        font-style: italic;
+      }
+      #img2{
+        margin-bottom: 40px;
+      }
     }
  
 
@@ -471,45 +637,45 @@
             z-index: 9999;
         }
   
-      .window {
-          width: 80%;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          background-color: #16224E;
-          border: 1px solid #ccc;
-          border-radius: 8px;
-          padding: 20px;
-          max-width: 90%;
-          max-height: 90%;
-          overflow-y: auto;
-      }
+        .window {
+            width: 80%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #16224E;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 90%;
+            max-height: 90%;
+            overflow-y: auto;
+        }
   
-      .window h2 {
-        text-align: center;
-          font-size: 24px;
-          margin: 0 0 15px;
+        .window h2 {
+          text-align: center;
+            font-size: 24px;
+            margin: 0 0 15px;
           color: white;
-      }
+        }
+    
+        .window p {
+          text-align: center;
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0;
+            color: white;
+        }
   
-      .window p {
-        text-align: center;
-          font-size: 16px;
-          line-height: 1.6;
-          margin: 0;
-          color: white;
-      }
-  
-      /* Estilo para o botão de fechar */
-      .close-btn {
-          color: white;
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          font-size: 24px;
-          cursor: pointer;
-      }
+      
+        .close-btn {
+            color: white;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+        }
 
         form {
           max-width: 400px;
@@ -553,6 +719,7 @@
           color: #fff;
           padding: 20px 0;
           text-align: center;
+          margin-top: 45px;
         }
         
         .footer-container {
