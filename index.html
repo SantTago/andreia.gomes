@@ -19,25 +19,26 @@
 
   <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
-    <a href="#" onclick="showSection('Dr.Eulalia')">Home</a>
-    <a href="contato.html" onclick="showSection('Dr.Eulalia')">Contato</a>
-    <a href="agendamentos.html" onclick="showSection('Dr.Eulalia')">Sobre</a>
-    <a href="serviços.html" onclick="showSection('Dr.Eulalia')">Soluções</a>
-    <a href="#" class="close-btn" onclick="closeMenu()">&larr; Contato</a>
+    <a href="#" onclick="showSection('Andreia-gomes')">Home</a>
+    <a href="#" onclick="showSection('Andreia-gomes')">Contato</a>
+    <a href="#" onclick="showSection('Andreia-gomes')">Sobre</a>
+    <a href="#" onclick="showSection('Andreia-gomes')">Soluções</a>
+    <a href="#" onclick="showSection('Andreia-gomes')">Contato</a>
+    <a href="#"  onclick="closeMenu()">&larr;</a>
   </div>
   <!-- Cabeçalho -->
   <header class="logomarca">
     <div class="open-btn" onclick="toggleMenu()">&#9776;</div>
     <div class="titulo">
-      <img src="img/logo.png" alt="Eulalia">
+      <img src="img/logo.png" alt="Andreia-gomes">
     </div>
     
   
     <nav class="header-menu">
-      <a href="#" onclick="showSection('Dr.Eulalia')">Home</a>
-      <a href="contato.html" onclick="showSection('Dr.Eulalia')">Sobre</a>
-      <a href="agendamentos.html">Soluçôes</a>
-      <a href="serviços.html" onclick="showSection('Dr.Eulalia')">Contato</a>
+      <a href="#" onclick="showSection('Andreia-gomes')">Home</a>
+      <a href="#" onclick="showSection('Andreia-gomes')">Sobre</a>
+      <a href="#">Soluçôes</a>
+      <a href="serviços.html" onclick="showSection('Andreia-gomes')">Contato</a>
     </nav>
   </header>
 
@@ -129,14 +130,14 @@
         Comportamental</h2>
     </div>
 
-    <div class="bloco">
-      <img class="redondo" src="img/icon-soluçoes.png" alt="1°">
+    <div class="bloco" onclick="mostrarPopup('Elaboração de Currículo');">
+      <img onclick="openWindow7()" class="redondo" src="img/icon-soluçoes.png" alt="6°">
       <h2>Elaboração <br>
         de Currículo</h2>
     </div>
 
-    <div class="bloco">
-      <img class="redondo" src="img/icon-soluçoes.png" alt="1°">
+    <div class="bloco" onclick="mostrarPopup('Divulgação de Vagas de emprego');">
+      <img onclick="openWindow8()" class="redondo" src="img/icon-soluçoes.png" alt="6°">
       <h2>Divulgação de <br>
         Vagas de emprego</h2>
     </div>
@@ -164,13 +165,13 @@
             </div>
         `;
 
-        var newWindow = document.createElement('div'); // Crie um novo elemento div
-        newWindow.innerHTML = windowContent; // Defina o conteúdo da div como a janela flutuante
-        document.body.appendChild(newWindow); // Adicione a div ao corpo do documento
-        newWindow.querySelector('.window-container').style.display = 'block'; // Exiba a janela
+        var newWindow = document.createElement('div'); 
+        newWindow.innerHTML = windowContent; 
+        document.body.appendChild(newWindow); 
+        newWindow.querySelector('.window-container').style.display = 'block'; 
     }
 
-    // Função para abrir outra janela flutuante com título e conteúdo diferente
+
     function openWindow2() {
         var title = "Implantações de HR";
         var content = "A implantação de RH envolve introduzir práticas, políticas e sistemas de RH na organização. Isso inclui ";
@@ -188,10 +189,10 @@
             </div>
         `;
 
-        var newWindow = document.createElement('div'); // Crie um novo elemento div
-        newWindow.innerHTML = windowContent; // Defina o conteúdo da div como a janela flutuante
-        document.body.appendChild(newWindow); // Adicione a div ao corpo do documento
-        newWindow.querySelector('.window-container').style.display = 'block'; // Exiba a janela
+        var newWindow = document.createElement('div');
+        newWindow.innerHTML = windowContent;
+        document.body.appendChild(newWindow); 
+        newWindow.querySelector('.window-container').style.display = 'block'; 
     }
 
     function openWindow3() {
@@ -211,10 +212,10 @@
             </div>
         `;
 
-        var newWindow = document.createElement('div'); // Crie um novo elemento div
-        newWindow.innerHTML = windowContent; // Defina o conteúdo da div como a janela flutuante
-        document.body.appendChild(newWindow); // Adicione a div ao corpo do documento
-        newWindow.querySelector('.window-container').style.display = 'block'; // Exiba a janela
+        var newWindow = document.createElement('div'); 
+        newWindow.innerHTML = windowContent; 
+        document.body.appendChild(newWindow); 
+        newWindow.querySelector('.window-container').style.display = 'block';
     }
 
     function openWindow4() {
@@ -234,10 +235,10 @@
             </div>
         `;
 
-        var newWindow = document.createElement('div'); // Crie um novo elemento div
-        newWindow.innerHTML = windowContent; // Defina o conteúdo da div como a janela flutuante
-        document.body.appendChild(newWindow); // Adicione a div ao corpo do documento
-        newWindow.querySelector('.window-container').style.display = 'block'; // Exiba a janela
+        var newWindow = document.createElement('div'); 
+        newWindow.innerHTML = windowContent;
+        document.body.appendChild(newWindow); 
+        newWindow.querySelector('.window-container').style.display = 'block'; 
     }
 
     function openWindow5() {
@@ -257,10 +258,10 @@
             </div>
         `;
 
-        var newWindow = document.createElement('div'); // Crie um novo elemento div
-        newWindow.innerHTML = windowContent; // Defina o conteúdo da div como a janela flutuante
-        document.body.appendChild(newWindow); // Adicione a div ao corpo do documento
-        newWindow.querySelector('.window-container').style.display = 'block'; // Exiba a janela
+        var newWindow = document.createElement('div'); 
+        newWindow.innerHTML = windowContent; 
+        document.body.appendChild(newWindow); 
+        newWindow.querySelector('.window-container').style.display = 'block'; 
     }
 
     function openWindow6() {
@@ -280,12 +281,57 @@
             </div>
         `;
 
-        var newWindow = document.createElement('div'); // Crie um novo elemento div
-        newWindow.innerHTML = windowContent; // Defina o conteúdo da div como a janela flutuante
-        document.body.appendChild(newWindow); // Adicione a div ao corpo do documento
-        newWindow.querySelector('.window-container').style.display = 'block'; // Exiba a janela
+        var newWindow = document.createElement('div');
+        newWindow.innerHTML = windowContent; 
+        document.body.appendChild(newWindow); 
+        newWindow.querySelector('.window-container').style.display = 'block'; 
     }
 
+    function openWindow7() {
+        var title = "Elaboração de Currículo";
+        var content = "A elaboração de currículo é uma parte crucial do processo de busca por emprego. Envolve criar um   ";
+        content += "documento que destaque as habilidades, experiências e qualificações de um candidato de forma clara   ";
+        content += "e atrativa para os empregadores. Isso inclui informações como histórico acadêmico, experiência   ";
+        content += "profissional, habilidades técnicas e soft skills. Um bom currículo deve ser adaptado para cada vaga   ";
+        content += "específica, destacando os pontos que são mais relevantes para o cargo almejado.";
+        var windowContent = `
+            <div class="window-container" onclick="closeWindow()">
+                <div class="window" onclick="event.stopPropagation()">
+                    <span class="close-btn" onclick="closeWindow()">X</span>
+                    <h2>${title}</h2>
+                    <p>${content}</p>
+                </div>
+            </div>
+        `;
+
+        var newWindow = document.createElement('div'); 
+        newWindow.innerHTML = windowContent; 
+        document.body.appendChild(newWindow); 
+        newWindow.querySelector('.window-container').style.display = 'block'; 
+    }
+
+    function openWindow8() {
+        var title = "Divulgação de Vagas de emprego";
+        var content = "A divulgação de vagas de emprego é o processo de compartilhar oportunidades de trabalho  ";
+        content += "disponíveis com potenciais candidatos. Isso pode ser feito através de diversos canais, como sites de  ";
+        content += "emprego, redes sociais, grupos profissionais, agências de recrutamento, entre outros. O objetivo é   ";
+        content += "alcançar o maior número possível de candidatos qualificados e interessados na vaga, garantindo assim  ";
+        content += "um processo seletivo eficaz e a contratação do profissional mais adequado para a posição.";
+        var windowContent = `
+            <div class="window-container" onclick="closeWindow()">
+                <div class="window" onclick="event.stopPropagation()">
+                    <span class="close-btn" onclick="closeWindow()">X</span>
+                    <h2>${title}</h2>
+                    <p>${content}</p>
+                </div>
+            </div>
+        `;
+
+        var newWindow = document.createElement('div'); 
+        newWindow.innerHTML = windowContent; 
+        document.body.appendChild(newWindow); 
+        newWindow.querySelector('.window-container').style.display = 'block'; 
+    }
 
 
     // Função para fechar a janela
