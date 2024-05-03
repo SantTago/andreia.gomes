@@ -99,32 +99,32 @@
         Organizacional</h2>
     </div>
 
-    <div class="bloco">
-      <img class="redondo" src="img/icon-soluçoes.png" alt="1°">
+    <div class="bloco" onclick="mostrarPopup('Implantações de HR');">
+      <img onclick="openWindow2()" class="redondo" src="img/icon-soluçoes.png" alt="2°">
       <h2>Implantações <br>
         de RH</h2>
     </div>
 
-    <div class="bloco">
-      <img class="redondo" src="img/icon-soluçoes.png" alt="1°">
+    <div class="bloco" onclick="mostrarPopup('Clima Organizacional');">
+      <img onclick="openWindow3()" class="redondo" src="img/icon-soluçoes.png" alt="3°">
       <h2>Clima <br>
         Organizacional</h2>
     </div>
 
-    <div class="bloco">
-      <img class="redondo" src="img/icon-soluçoes.png" alt="1°">
+    <div class="bloco" onclick="mostrarPopup('Consultoria em RH');">
+      <img onclick="openWindow4()" class="redondo" src="img/icon-soluçoes.png" alt="4°">
       <h2>Consultoria <br>
         em RH</h2>
     </div>
 
-    <div class="bloco">
-      <img class="redondo" src="img/icon-soluçoes.png" alt="1°">
+    <div class="bloco" onclick="mostrarPopup('Recrutamento e Seleção');">
+      <img onclick="openWindow5()" class="redondo" src="img/icon-soluçoes.png" alt="5°">
       <h2>Recrutamento <br>
         e Seleção</h2>
     </div>
 
-    <div class="bloco">
-      <img class="redondo" src="img/icon-soluçoes.png" alt="1°">
+    <div class="bloco" onclick="mostrarPopup('Treinamento Comportamental');">
+      <img onclick="openWindow6()" class="redondo" src="img/icon-soluçoes.png" alt="6°">
       <h2>Treinamento <br>
         Comportamental</h2>
     </div>
@@ -148,9 +148,11 @@
     function openWindow1() {
         var title = "Diagnóstico Organizacional";
         var content = " ";
-        content += "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ";
-        content += "Nulla facilisi. Duis ut augue ac massa commodo aliquet. ";
-        content += "Vestibulum nec est vitae odio tincidunt interdum.";
+        content += "O diagnóstico organizacional é uma análise detalhada da estrutura, processos, clima organizacional,  ";
+        content += "conformidade legal e desempenho dos colaboradores de uma empresa. Essa avaliação ajuda a  ";
+        content += "identificar áreas de melhoria e oportunidades de otimização. Em contabilidade e RH, isso significa ";
+        content += "entender como esses departamentos estão funcionando e onde podem ser feitas melhorias para ";
+        content += "aumentar a eficiência e o desempenho organizacional. ";
 
         var windowContent = `
             <div class="window-container" onclick="closeWindow()">
@@ -170,12 +172,12 @@
 
     // Função para abrir outra janela flutuante com título e conteúdo diferente
     function openWindow2() {
-        var title = "Título do Artigo 2";
-        var content = "Conteúdo do Artigo 2. ";
-        content += "Sed euismod consequat lectus, sit amet ultrices sem sodales ut. ";
-        content += "Pellentesque pharetra leo sed magna porta, ut ullamcorper nisi convallis. ";
-        content += "Donec nec sem et orci pharetra dignissim.";
-
+        var title = "Implantações de HR";
+        var content = "A implantação de RH envolve introduzir práticas, políticas e sistemas de RH na organização. Isso inclui ";
+        content += "A implantação de RH envolve introduzir práticas, políticas e sistemas de RH na organização. Isso inclui ";
+        content += "criar processos, estabelecer políticas, implementar tecnologia, treinar funcionários e garantir uma ";
+        content += "avaliação contínua. O objetivo é garantir uma transição suave e eficaz para novas práticas de gestão de ";
+        content += "pessoas.";
         var windowContent = `
             <div class="window-container" onclick="closeWindow()">
                 <div class="window" onclick="event.stopPropagation()">
@@ -191,6 +193,100 @@
         document.body.appendChild(newWindow); // Adicione a div ao corpo do documento
         newWindow.querySelector('.window-container').style.display = 'block'; // Exiba a janela
     }
+
+    function openWindow3() {
+        var title = "Clima Organizacional";
+        var content = "O clima organizacional se refere ao ambiente de trabalho em uma empresa, incluindo a cultura, as  ";
+        content += "relações interpessoais e a satisfação dos funcionários. É como as pessoas se sentem ao trabalhar lá.  ";
+        content += "Um bom clima organizacional promove a motivação, a produtividade e a retenção de talentos,  ";
+        content += "enquanto um clima negativo pode levar a baixo desempenho e alta rotatividade. Manter um clima  ";
+        content += "organizacional saudável é essencial para o sucesso de qualquer empresa.";
+        var windowContent = `
+            <div class="window-container" onclick="closeWindow()">
+                <div class="window" onclick="event.stopPropagation()">
+                    <span class="close-btn" onclick="closeWindow()">X</span>
+                    <h2>${title}</h2>
+                    <p>${content}</p>
+                </div>
+            </div>
+        `;
+
+        var newWindow = document.createElement('div'); // Crie um novo elemento div
+        newWindow.innerHTML = windowContent; // Defina o conteúdo da div como a janela flutuante
+        document.body.appendChild(newWindow); // Adicione a div ao corpo do documento
+        newWindow.querySelector('.window-container').style.display = 'block'; // Exiba a janela
+    }
+
+    function openWindow4() {
+        var title = "Consultoria em RH";
+        var content = "A consultoria em RH oferece suporte especializado para otimizar as práticas de recursos humanos em  ";
+        content += "uma empresa. Isso inclui recrutamento, treinamento, gestão de desempenho, políticas de remuneração  ";
+        content += "e gestão de mudanças. Para a contabilidade e recursos humanos da Andreia Gomes, isso significa ter  ";
+        content += "acesso a orientações precisas e eficazes para lidar com questões relacionadas às pessoas,  ";
+        content += "fortalecendo tanto os departamentos de contabilidade quanto de RH.";
+        var windowContent = `
+            <div class="window-container" onclick="closeWindow()">
+                <div class="window" onclick="event.stopPropagation()">
+                    <span class="close-btn" onclick="closeWindow()">X</span>
+                    <h2>${title}</h2>
+                    <p>${content}</p>
+                </div>
+            </div>
+        `;
+
+        var newWindow = document.createElement('div'); // Crie um novo elemento div
+        newWindow.innerHTML = windowContent; // Defina o conteúdo da div como a janela flutuante
+        document.body.appendChild(newWindow); // Adicione a div ao corpo do documento
+        newWindow.querySelector('.window-container').style.display = 'block'; // Exiba a janela
+    }
+
+    function openWindow5() {
+        var title = "Recrutamento e Seleção";
+        var content = "O recrutamento e seleção são processos fundamentais para encontrar e contratar talentos que se  ";
+        content += "encaixem nas necessidades da empresa. Isso envolve atrair candidatos qualificados, avaliar suas  ";
+        content += "habilidades e experiência, e escolher os melhores para as vagas disponíveis. Com um recrutamento e   ";
+        content += "seleção eficazes, a empresa pode garantir que tenha uma equipe talentosa e bem alinhada com seus   ";
+        content += "objetivos e cultura organizacional.";
+        var windowContent = `
+            <div class="window-container" onclick="closeWindow()">
+                <div class="window" onclick="event.stopPropagation()">
+                    <span class="close-btn" onclick="closeWindow()">X</span>
+                    <h2>${title}</h2>
+                    <p>${content}</p>
+                </div>
+            </div>
+        `;
+
+        var newWindow = document.createElement('div'); // Crie um novo elemento div
+        newWindow.innerHTML = windowContent; // Defina o conteúdo da div como a janela flutuante
+        document.body.appendChild(newWindow); // Adicione a div ao corpo do documento
+        newWindow.querySelector('.window-container').style.display = 'block'; // Exiba a janela
+    }
+
+    function openWindow6() {
+        var title = "Treinamento Comportamental";
+        var content = "O treinamento comportamental é uma parte essencial do desenvolvimento dos funcionários, focado   ";
+        content += "em melhorar habilidades e comportamentos específicos. Isso inclui treinamentos para comunicação   ";
+        content += "eficaz, liderança, trabalho em equipe, resolução de conflitos, entre outros. O objetivo é promover um   ";
+        content += "ambiente de trabalho mais produtivo e colaborativo, capacitando os colaboradores para lidar com   ";
+        content += "desafios de forma eficaz e desenvolver habilidades que contribuam para o sucesso da empresa.";
+        var windowContent = `
+            <div class="window-container" onclick="closeWindow()">
+                <div class="window" onclick="event.stopPropagation()">
+                    <span class="close-btn" onclick="closeWindow()">X</span>
+                    <h2>${title}</h2>
+                    <p>${content}</p>
+                </div>
+            </div>
+        `;
+
+        var newWindow = document.createElement('div'); // Crie um novo elemento div
+        newWindow.innerHTML = windowContent; // Defina o conteúdo da div como a janela flutuante
+        document.body.appendChild(newWindow); // Adicione a div ao corpo do documento
+        newWindow.querySelector('.window-container').style.display = 'block'; // Exiba a janela
+    }
+
+
 
     // Função para fechar a janela
     function closeWindow() {
