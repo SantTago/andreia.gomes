@@ -19,12 +19,11 @@
 
   <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
-    <a href="#" onclick="showSection('Andreia-gomes')">Home</a>
-    <a href="#" onclick="showSection('Andreia-gomes')">Contato</a>
-    <a href="#" onclick="showSection('Andreia-gomes')">Sobre</a>
-    <a href="#" onclick="showSection('Andreia-gomes')">Soluções</a>
-    <a href="#" onclick="showSection('Andreia-gomes')">Contato</a>
-    <a href="#"  onclick="closeMenu()">&larr;</a>
+    <a href="#" onclick="scrollToSection('home')" >Home</a>
+    <a href="#" onclick="scrollToSection('sobre')">Sobre</a>
+    <a href="#" onclick="scrollToSection('servicos')" >Soluções</a>
+    <a href="#" onclick="scrollToSection('contato')" >Contato</a>
+    <a href="#" onclick="closeMenu()">&larr;</a>
   </div>
   <!-- Cabeçalho -->
   <header class="logomarca">
@@ -35,10 +34,10 @@
     
   
     <nav class="header-menu">
-      <a href="#" onclick="showSection('Andreia-gomes')">Home</a>
-      <a href="#" onclick="showSection('Andreia-gomes')">Sobre</a>
-      <a href="#">Soluçôes</a>
-      <a href="serviços.html" onclick="showSection('Andreia-gomes')">Contato</a>
+      <a href="#" onclick="scrollToSection('home')">Home</a>
+      <a href="#" onclick="scrollToSection('sobre1')">Sobre</a>
+      <a href="#" onclick="scrollToSection('servicos')">Soluçôes</a>
+      <a href="#" onclick="scrollToSection('contato')" >Contato</a>
     </nav>
   </header>
 
@@ -48,22 +47,22 @@
       </section>
     
       <!-- Imagem para telas pequenas -->
-      <section class="mobile-img">
+      <section class="mobile-img" id="home">
         <img class="img" src="img/sub-logo.jpg" alt="sub-logo">
       </section>
 
-    <div class="botoes">
+    <div class="botoes" >
         <button>ABRIR EMPRESA</button>
         <button>MIGRAR EMPRESA</button>
         <button>MIGRAR EMPRESA</button>
     </div>
 
-    <section class="desktop-img">
+    <section class="desktop-img" id="sobre1"> 
       <img class="img" src="img/sobre-nos.jpg" alt="grande-logo">
     </section>
   
     <!-- Imagem para telas pequenas -->
-    <section class="mobile-img">
+    <section class="mobile-img" id="sobre">
       <img class="img" id="img" src="img/sub-sobre.jpg" alt="sub-logo">
     </section>
 
@@ -87,7 +86,7 @@
 
     </span>
 
-    <section>
+    <section id="servicos">
       <img  class="img"  id="img2" src="img/soluçoes.jpg" alt="sub-logo">
   </section>
 
@@ -350,11 +349,11 @@
 
   </main>
 
-  <footer>
+  <footer id="contato">
     <h2>Contato</h2>
   </footer>
 
-  <form action="mailto:mocobom09@gmail.com" method="post" enctype="text/plain">
+  <form action="mailto:andreiamarciany@hotmail.com" method="post" enctype="text/plain">
     <label for="nome">Nome:</label>
     <input type="text" id="nome" name="nome" required>
     <label for="email">Email:</label>
@@ -367,20 +366,20 @@
   <footer class="contato">
     <div class="footer-container">
       <div class="footer-item">
-        <a href=""><img src="img/icon-zap.png" alt="WhatsApp"></a>
+        <a href="https://wa.me/5588996523108" target="_blank"><img src="img/icon-zap.png" alt="WhatsApp"></a>
       </div>
       <div class="footer-item">
-        <a href=""><img src="img/icon-instagram.png" alt="Instagram"></a>
+        <a href="https://www.instagram.com/ag_contabiildaderh/" target="_blank"><img src="img/icon-instagram.png" alt="Instagram"></a>
       </div>
       <div class="footer-item">
-        <a href=""><img src="img/icon-gmail.png" alt="Email"></a>
+        <a href="andreiamarciany@hotmail.com" target="_blank"><img src="img/icon-gmail.png" alt="Email"></a>
       </div>
       <div class="footer-item">
-        <a href=""><img src="img/icon-localização.png" alt="localização"></a>
+        <a href="https://maps.app.goo.gl/uoq3wxX5yuftYqPCA" target="_blank"><img src="img/icon-localização.png" alt="localização"></a>
       </div>
     </div>
     <div class="footer-address">
-      Endereço: R. Carlos Trévia, 2163 - Camocim C - 2024
+      Endereço: R. Carlos Trévia, 2163 - Camocim Ceara - 2024
     </div>
     <div class="footer-copyright">
       © 2024 Todos os direitos reservados
@@ -426,9 +425,34 @@
       headerMenu.classList.toggle('menu-opened');
     });
   </script>
- 
-  <!------------------------------------------------------------------>
- 
-  <!------------------------------------------------------------------>
+ <div id="btnTopo" onclick="scrollTopFunction()" title="Voltar ao Topo">^</div>
+  <!------script da rolagem------------------------->
+  <script src="script.js"></script>
+  <script>
+    function scrollToSection(sectionId) {
+    var section = document.getElementById(sectionId);
+    var sectionPosition = section.offsetTop;
+    window.scrollTo({
+        top: sectionPosition,
+        behavior: 'smooth' // Isso garante uma rolagem suave
+    });
+}
+  </script>
+  <!---------------------botao top da tela ---------------------------------------->
+  <script>
+    function scrollTopFunction() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Mostrar ou ocultar botão "Voltar ao Topo" conforme a posição do scroll
+    window.onscroll = function() {
+        var btnTopo = document.getElementById("btnTopo");
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            btnTopo.style.display = "block";
+        } else {
+            btnTopo.style.display = "none";
+        }
+    };
+  </script>
 </body>
 </html>

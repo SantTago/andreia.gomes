@@ -289,9 +289,10 @@
       color: #000320;
       padding: 10px;
       font-size: larger;
+      font-weight: bold;
     }
     .header-menu a:hover{
-      color: #ffc400;
+      color: #ffffff;
     }
   
 
@@ -308,6 +309,13 @@
 
     /* Media query para tela com largura mínima de 768px */
     @media only screen and (min-width: 768px) {
+      .sidebar{
+        display: none;
+      }
+      #btnTopo {
+        display: none;
+      }
+
       .mobile-img {
         display: none; /* Esconde a imagem para telas grandes */
       }
@@ -334,6 +342,7 @@
         margin: 10px;
         left: 60px;
         top: -16px;
+        font-weight: 900;
       }
       button:hover{
           background-color: #16224E;
@@ -507,9 +516,31 @@
         margin-bottom: 40px;
       }
     }
- 
+  
+
 
     @media only screen and (max-width: 768px) {
+      #btnTopo {
+        font-size: 28px;
+        width: 66px;
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: -7px;
+        z-index: 99;
+        border: none;
+        outline: none;
+        background-color: #16224E;
+        color: white;
+        cursor: pointer;
+        padding: 4px;
+        height: 25px;
+        border-radius: 50px 0px 0px 50px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        transition: opacity 0.3s, transform 0.3s;
+        text-align: center;
+      }
+      
       .container {
         flex-direction: column;
         align-items: center;
@@ -547,9 +578,11 @@
           width: 120px;
           height: 34px;
           border: 2px #16224E solid;
+          color: #16224E ;
           border-radius: 50px;
           font-size: 11px;
           margin: auto;
+          font-weight: bold;
       
           }
         button:hover{
@@ -559,7 +592,7 @@
         .botoes{
             display: flex;
             color: #16224E;
-    
+           
         }
     
         .nos{
