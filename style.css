@@ -38,6 +38,8 @@
     }
 
     @media only screen and (min-width: 768px) {
+      
+      
         .logomarca img {
             max-width: 49%;
             height: auto;
@@ -314,6 +316,8 @@
       }
       #btnTopo {
         display: none;
+        background-color: #16224E ;
+        color: #16224E ;
       }
 
       .mobile-img {
