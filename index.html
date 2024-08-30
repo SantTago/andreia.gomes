@@ -1,458 +1,267 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Andreia Gomes</title>
-  <link rel="icon" href="caminho/para/seu-favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planos de Marketing Digital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .planos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: -50px;
+        }
+        .plano {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .plano:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .plano h2 {
+            font-size: 28px;
+            color: #333;
+        }
+        .plano p {
+            color: #555;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .preco {
+            font-size: 24px;
+            font-weight: bold;
+            color: #008cba;
+        }
+        .btn {
+            display: inline-block;
+            margin: 15px 10px;
+            padding: 12px 25px;
+            background-color: #008cba;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #005f75;
+        }
+        .btn i {
+            margin-right: 10px;
+        }
+        .plano .benefits {
+            text-align: left;
+            margin: 20px 0;
+        }
+        .plano .benefits li {
+            list-style: none;
+            font-size: 16px;
+            padding: 5px 0;
+        }
+        .plano .benefits li i {
+            color: #008cba;
+            margin-right: 10px;
+        }
+        .restricted-area {
+            text-align: center;
+            margin: 50px 0;
+        }
+        .restricted-area .btn-restricted {
+            background-color: #ff6347;
+            padding: 15px 30px;
+        }
+        .restricted-area .btn-restricted:hover {
+            background-color: #e55337;
+        }
+        /* Estilo do Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .modal-content h3 {
+            margin-bottom: 20px;
+        }
+        .number-pad {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .number-pad button {
+            padding: 15px;
+            font-size: 18px;
+            background-color: #008cba;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .number-pad button:hover {
+            background-color: #005f75;
+        }
+        .close-btn {
+            margin-top: 20px;
+            background-color: #e55337;
+            padding: 10px 20px;
+        }
+    </style>
+    <script>
+        let inputPassword = '';
 
+        function openModal() {
+            document.getElementById('modal').style.display = 'flex';
+        }
 
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+            inputPassword = ''; // Limpa a senha ao fechar o modal
+        }
 
+        function addNumber(num) {
+            inputPassword += num;
+            if (inputPassword.length === 3) { // Considera a senha com 3 dígitos
+                if (inputPassword === '123') {
+                    window.location.href = 'area-restrita.html';
+                } else {
+                    alert('Senha incorreta!');
+                    closeModal();
+                }
+            }
+        }
+    </script>
 </head>
 <body>
 
-  <!-- Sidebar -->
-  <div class="sidebar" id="sidebar">
-    <a href="#" onclick="scrollToSection('home')" >Home</a>
-    <a href="#" onclick="scrollToSection('sobre')">Sobre</a>
-    <a href="#" onclick="scrollToSection('servicos')" >Soluções</a>
-    <a href="#" onclick="scrollToSection('contato')" >Contato</a>
-    <a href="#" onclick="closeMenu()">&larr;</a>
-  </div>
-  <!-- Cabeçalho -->
-  <header class="logomarca">
-    <div class="open-btn" onclick="toggleMenu()">&#9776;</div>
-    <div class="titulo">
-      <img src="img/logo.png" alt="Andreia-gomes">
-    </div>
-    
-  
-    <nav class="header-menu">
-      <a href="#" onclick="scrollToSection('home')">Home</a>
-      <a href="#" onclick="scrollToSection('sobre1')">Sobre</a>
-      <a href="#" onclick="scrollToSection('servicos')">Soluçôes</a>
-      <a href="#" onclick="scrollToSection('contato')" >Contato</a>
-    </nav>
-  </header>
-
-  <main>
-      <section class="desktop-img">
-        <img class="img" src="img/sub-logo-G.jpg" alt="grande-logo">
-      </section>
-    
-      <!-- Imagem para telas pequenas -->
-      <section class="mobile-img" id="home">
-        <img class="img" src="img/sub-logo.jpg" alt="sub-logo">
-      </section>
-
-    <div class="botoes" >
-        <button>ABRIR EMPRESA</button>
-        <button>MIGRAR EMPRESA</button>
-        <button>MIGRAR EMPRESA</button>
+    <div class="header">
+        <h1>Nossos Planos de Marketing Digital</h1>
     </div>
 
-    <section class="desktop-img" id="sobre1"> 
-      <img class="img" src="img/sobre-nos.jpg" alt="grande-logo">
-    </section>
-  
-    <!-- Imagem para telas pequenas -->
-    <section class="mobile-img" id="sobre">
-      <img class="img" id="img" src="img/sub-sobre.jpg" alt="sub-logo">
-    </section>
+    <div class="container">
+        <div class="planos">
 
-   
-
-    <span class="mobile-img ">
-        <h2 class="nos">Sobre nós</h2>
-        <br>
-        <h2 class="nosso-foco">
-            Nosso foco é prestar <br>
-            serviço com <br>
-            qualidade, segurança <br>
-            e praticidade
-        </h2>
-        <h3 class="somos">Somos uma equipe especializada em contabilidade e 
-            recursos humanos, dedicada a oferecer soluções eficientes 
-            para empresas. Com vasta experiência e profissionalismo, 
-            estamos aqui para ajudar você a gerenciar suas finanças e 
-            equipe de forma eficaz. Conte conosco para contabilidade, 
-            gestão de pessoas, treinamentos e vagas de emprego.</h3>
-
-    </span>
-
-    <section id="servicos">
-      <img  class="img"  id="img2" src="img/soluçoes.jpg" alt="sub-logo">
-  </section>
-
-
-  <section class="bloco1">
-
-    <div class="bloco" onclick="mostrarPopup('Diagnóstico Organizacional');">
-      <img onclick="openWindow1()" class="redondo" src="img/icon-soluçoes.png" alt="1°">
-      <h2>Diagnóstico <br>
-        Organizacional</h2>
-    </div>
-
-    <div class="bloco" onclick="mostrarPopup('Implantações de HR');">
-      <img onclick="openWindow2()" class="redondo" src="img/icon-soluçoes.png" alt="2°">
-      <h2>Implantações <br>
-        de RH</h2>
-    </div>
-
-    <div class="bloco" onclick="mostrarPopup('Clima Organizacional');">
-      <img onclick="openWindow3()" class="redondo" src="img/icon-soluçoes.png" alt="3°">
-      <h2>Clima <br>
-        Organizacional</h2>
-    </div>
-
-    <div class="bloco" onclick="mostrarPopup('Consultoria em RH');">
-      <img onclick="openWindow4()" class="redondo" src="img/icon-soluçoes.png" alt="4°">
-      <h2>Consultoria <br>
-        em RH</h2>
-    </div>
-
-    <div class="bloco" onclick="mostrarPopup('Recrutamento e Seleção');">
-      <img onclick="openWindow5()" class="redondo" src="img/icon-soluçoes.png" alt="5°">
-      <h2>Recrutamento <br>
-        e Seleção</h2>
-    </div>
-
-    <div class="bloco" onclick="mostrarPopup('Treinamento Comportamental');">
-      <img onclick="openWindow6()" class="redondo" src="img/icon-soluçoes.png" alt="6°">
-      <h2>Treinamento <br>
-        Comportamental</h2>
-    </div>
-
-    <div class="bloco" onclick="mostrarPopup('Elaboração de Currículo');">
-      <img onclick="openWindow7()" class="redondo" src="img/icon-soluçoes.png" alt="6°">
-      <h2>Elaboração <br>
-        de Currículo</h2>
-    </div>
-
-    <div class="bloco" onclick="mostrarPopup('Divulgação de Vagas de emprego');">
-      <img onclick="openWindow8()" class="redondo" src="img/icon-soluçoes.png" alt="6°">
-      <h2>Divulgação de <br>
-        Vagas de emprego</h2>
-    </div>
-
-  </section>
-
-  <script>
-    // Função para abrir janela flutuante com título e conteúdo
-    function openWindow1() {
-        var title = "Diagnóstico Organizacional";
-        var content = " ";
-        content += "O diagnóstico organizacional é uma análise detalhada da estrutura, processos, clima organizacional,  ";
-        content += "conformidade legal e desempenho dos colaboradores de uma empresa. Essa avaliação ajuda a  ";
-        content += "identificar áreas de melhoria e oportunidades de otimização. Em contabilidade e RH, isso significa ";
-        content += "entender como esses departamentos estão funcionando e onde podem ser feitas melhorias para ";
-        content += "aumentar a eficiência e o desempenho organizacional. ";
-
-        var windowContent = `
-            <div class="window-container" onclick="closeWindow()">
-                <div class="window" onclick="event.stopPropagation()">
-                    <span class="close-btn" onclick="closeWindow()">X</span>
-                    <h2>${title}</h2>
-                    <p>${content}</p>
-                </div>
+            <div class="plano">
+                <h2>Pacote Básico</h2>
+                <p class="preco">R$: 200,00</p>
+                <ul class="benefits">
+                    <li><i class="fas fa-check"></i> 3 posts semanais</li>
+                    <li><i class="fas fa-check"></i> 3 stories semanais</li>
+                    <li><i class="fas fa-times"></i> Carrosséis não inclusos</li>
+                </ul>
+                <a href="https://wa.me/SEUNUMEROAQUI" class="btn"><i class="fab fa-whatsapp"></i> Falar Conosco</a>
+                <a href="#" class="btn"><i class="fas fa-shopping-cart"></i> Adquirir Agora</a>
             </div>
-        `;
 
-        var newWindow = document.createElement('div'); 
-        newWindow.innerHTML = windowContent; 
-        document.body.appendChild(newWindow); 
-        newWindow.querySelector('.window-container').style.display = 'block'; 
-    }
-
-
-    function openWindow2() {
-        var title = "Implantações de HR";
-        var content = "A implantação de RH envolve introduzir práticas, políticas e sistemas de RH na organização. Isso inclui ";
-        content += "A implantação de RH envolve introduzir práticas, políticas e sistemas de RH na organização. Isso inclui ";
-        content += "criar processos, estabelecer políticas, implementar tecnologia, treinar funcionários e garantir uma ";
-        content += "avaliação contínua. O objetivo é garantir uma transição suave e eficaz para novas práticas de gestão de ";
-        content += "pessoas.";
-        var windowContent = `
-            <div class="window-container" onclick="closeWindow()">
-                <div class="window" onclick="event.stopPropagation()">
-                    <span class="close-btn" onclick="closeWindow()">X</span>
-                    <h2>${title}</h2>
-                    <p>${content}</p>
-                </div>
+            <div class="plano">
+                <h2>Pacote Júnior</h2>
+                <p class="preco">R$: 250,00</p>
+                <ul class="benefits">
+                    <li><i class="fas fa-check"></i> 4 posts semanais</li>
+                    <li><i class="fas fa-check"></i> 4 stories semanais</li>
+                    <li><i class="fas fa-check"></i> 1 carrossel incluído</li>
+                </ul>
+                <a href="https://wa.me/SEUNUMEROAQUI" class="btn"><i class="fab fa-whatsapp"></i> Falar Conosco</a>
+                <a href="#" class="btn"><i class="fas fa-shopping-cart"></i> Adquirir Agora</a>
             </div>
-        `;
 
-        var newWindow = document.createElement('div');
-        newWindow.innerHTML = windowContent;
-        document.body.appendChild(newWindow); 
-        newWindow.querySelector('.window-container').style.display = 'block'; 
-    }
-
-    function openWindow3() {
-        var title = "Clima Organizacional";
-        var content = "O clima organizacional se refere ao ambiente de trabalho em uma empresa, incluindo a cultura, as  ";
-        content += "relações interpessoais e a satisfação dos funcionários. É como as pessoas se sentem ao trabalhar lá.  ";
-        content += "Um bom clima organizacional promove a motivação, a produtividade e a retenção de talentos,  ";
-        content += "enquanto um clima negativo pode levar a baixo desempenho e alta rotatividade. Manter um clima  ";
-        content += "organizacional saudável é essencial para o sucesso de qualquer empresa.";
-        var windowContent = `
-            <div class="window-container" onclick="closeWindow()">
-                <div class="window" onclick="event.stopPropagation()">
-                    <span class="close-btn" onclick="closeWindow()">X</span>
-                    <h2>${title}</h2>
-                    <p>${content}</p>
-                </div>
+            <div class="plano">
+                <h2>Plano Master</h2>
+                <p class="preco">R$: 350,00</p>
+                <ul class="benefits">
+                    <li><i class="fas fa-check"></i> 5 posts semanais</li>
+                    <li><i class="fas fa-check"></i> 5 stories semanais</li>
+                    <li><i class="fas fa-check"></i> 2 carrosséis inclusos</li>
+                    <li><i class="fas fa-check"></i> Descrições personalizadas</li>
+                </ul>
+                <a href="https://wa.me/SEUNUMEROAQUI" class="btn"><i class="fab fa-whatsapp"></i> Falar Conosco</a>
+                <a href="#" class="btn"><i class="fas fa-shopping-cart"></i> Adquirir Agora</a>
             </div>
-        `;
 
-        var newWindow = document.createElement('div'); 
-        newWindow.innerHTML = windowContent; 
-        document.body.appendChild(newWindow); 
-        newWindow.querySelector('.window-container').style.display = 'block';
-    }
-
-    function openWindow4() {
-        var title = "Consultoria em RH";
-        var content = "A consultoria em RH oferece suporte especializado para otimizar as práticas de recursos humanos em  ";
-        content += "uma empresa. Isso inclui recrutamento, treinamento, gestão de desempenho, políticas de remuneração  ";
-        content += "e gestão de mudanças. Para a contabilidade e recursos humanos da Andreia Gomes, isso significa ter  ";
-        content += "acesso a orientações precisas e eficazes para lidar com questões relacionadas às pessoas,  ";
-        content += "fortalecendo tanto os departamentos de contabilidade quanto de RH.";
-        var windowContent = `
-            <div class="window-container" onclick="closeWindow()">
-                <div class="window" onclick="event.stopPropagation()">
-                    <span class="close-btn" onclick="closeWindow()">X</span>
-                    <h2>${title}</h2>
-                    <p>${content}</p>
-                </div>
+            <div class="plano">
+                <h2>Plano Prêmio</h2>
+                <p class="preco">R$: 450,00</p>
+                <ul class="benefits">
+                    <li><i class="fas fa-check"></i> 5 posts semanais</li>
+                    <li><i class="fas fa-check"></i> 5 stories semanais</li>
+                    <li><i class="fas fa-check"></i> 3 carrosséis inclusos</li>
+                    <li><i class="fas fa-check"></i> Descrições personalizadas</li>
+                    <li><i class="fas fa-check"></i> Criação e publicação automática</li>
+                </ul>
+                <a href="https://wa.me/SEUNUMEROAQUI" class="btn"><i class="fab fa-whatsapp"></i> Falar Conosco</a>
+                <a href="#" class="btn"><i class="fas fa-shopping-cart"></i> Adquirir Agora</a>
             </div>
-        `;
 
-        var newWindow = document.createElement('div'); 
-        newWindow.innerHTML = windowContent;
-        document.body.appendChild(newWindow); 
-        newWindow.querySelector('.window-container').style.display = 'block'; 
-    }
+        </div>
 
-    function openWindow5() {
-        var title = "Recrutamento e Seleção";
-        var content = "O recrutamento e seleção são processos fundamentais para encontrar e contratar talentos que se  ";
-        content += "encaixem nas necessidades da empresa. Isso envolve atrair candidatos qualificados, avaliar suas  ";
-        content += "habilidades e experiência, e escolher os melhores para as vagas disponíveis. Com um recrutamento e   ";
-        content += "seleção eficazes, a empresa pode garantir que tenha uma equipe talentosa e bem alinhada com seus   ";
-        content += "objetivos e cultura organizacional.";
-        var windowContent = `
-            <div class="window-container" onclick="closeWindow()">
-                <div class="window" onclick="event.stopPropagation()">
-                    <span class="close-btn" onclick="closeWindow()">X</span>
-                    <h2>${title}</h2>
-                    <p>${content}</p>
-                </div>
-            </div>
-        `;
-
-        var newWindow = document.createElement('div'); 
-        newWindow.innerHTML = windowContent; 
-        document.body.appendChild(newWindow); 
-        newWindow.querySelector('.window-container').style.display = 'block'; 
-    }
-
-    function openWindow6() {
-        var title = "Treinamento Comportamental";
-        var content = "O treinamento comportamental é uma parte essencial do desenvolvimento dos funcionários, focado   ";
-        content += "em melhorar habilidades e comportamentos específicos. Isso inclui treinamentos para comunicação   ";
-        content += "eficaz, liderança, trabalho em equipe, resolução de conflitos, entre outros. O objetivo é promover um   ";
-        content += "ambiente de trabalho mais produtivo e colaborativo, capacitando os colaboradores para lidar com   ";
-        content += "desafios de forma eficaz e desenvolver habilidades que contribuam para o sucesso da empresa.";
-        var windowContent = `
-            <div class="window-container" onclick="closeWindow()">
-                <div class="window" onclick="event.stopPropagation()">
-                    <span class="close-btn" onclick="closeWindow()">X</span>
-                    <h2>${title}</h2>
-                    <p>${content}</p>
-                </div>
-            </div>
-        `;
-
-        var newWindow = document.createElement('div');
-        newWindow.innerHTML = windowContent; 
-        document.body.appendChild(newWindow); 
-        newWindow.querySelector('.window-container').style.display = 'block'; 
-    }
-
-    function openWindow7() {
-        var title = "Elaboração de Currículo";
-        var content = "A elaboração de currículo é uma parte crucial do processo de busca por emprego. Envolve criar um   ";
-        content += "documento que destaque as habilidades, experiências e qualificações de um candidato de forma clara   ";
-        content += "e atrativa para os empregadores. Isso inclui informações como histórico acadêmico, experiência   ";
-        content += "profissional, habilidades técnicas e soft skills. Um bom currículo deve ser adaptado para cada vaga   ";
-        content += "específica, destacando os pontos que são mais relevantes para o cargo almejado.";
-        var windowContent = `
-            <div class="window-container" onclick="closeWindow()">
-                <div class="window" onclick="event.stopPropagation()">
-                    <span class="close-btn" onclick="closeWindow()">X</span>
-                    <h2>${title}</h2>
-                    <p>${content}</p>
-                </div>
-            </div>
-        `;
-
-        var newWindow = document.createElement('div'); 
-        newWindow.innerHTML = windowContent; 
-        document.body.appendChild(newWindow); 
-        newWindow.querySelector('.window-container').style.display = 'block'; 
-    }
-
-    function openWindow8() {
-        var title = "Divulgação de Vagas de emprego";
-        var content = "A divulgação de vagas de emprego é o processo de compartilhar oportunidades de trabalho  ";
-        content += "disponíveis com potenciais candidatos. Isso pode ser feito através de diversos canais, como sites de  ";
-        content += "emprego, redes sociais, grupos profissionais, agências de recrutamento, entre outros. O objetivo é   ";
-        content += "alcançar o maior número possível de candidatos qualificados e interessados na vaga, garantindo assim  ";
-        content += "um processo seletivo eficaz e a contratação do profissional mais adequado para a posição.";
-        var windowContent = `
-            <div class="window-container" onclick="closeWindow()">
-                <div class="window" onclick="event.stopPropagation()">
-                    <span class="close-btn" onclick="closeWindow()">X</span>
-                    <h2>${title}</h2>
-                    <p>${content}</p>
-                </div>
-            </div>
-        `;
-
-        var newWindow = document.createElement('div'); 
-        newWindow.innerHTML = windowContent; 
-        document.body.appendChild(newWindow); 
-        newWindow.querySelector('.window-container').style.display = 'block'; 
-    }
-
-
-    // Função para fechar a janela
-    function closeWindow() {
-        var windowContainer = document.querySelector('.window-container');
-        windowContainer.remove(); // Remova a janela
-    }
-
-    // Função para fechar a janela ao clicar fora dela
-    window.addEventListener('click', function(event) {
-        if (event.target.classList.contains('window-container')) {
-            closeWindow();
-        }
-    });
-</script>
-
-  </main>
-
-  <footer id="contato">
-    <h2>Contato</h2>
-  </footer>
-
-  <form action="andreiamarciany@hotmail.com" method="post" enctype="text/plain">
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" name="nome" required>
-    <label for="email">Email:</label>
-    <input type="text" id="email" name="email" required>
-    <label for="mensagem">Mensagem:</label>
-    <textarea id="mensagem" name="mensagem" required></textarea>
-    <input type="submit" value="Enviar">
-  </form>
-
-  <footer class="contato">
-    <div class="footer-container">
-      <div class="footer-item">
-        <a href="https://wa.me/5588996523108" target="_blank"><img src="img/icon-zap.png" alt="WhatsApp"></a>
-      </div>
-      <div class="footer-item">
-        <a href="https://www.instagram.com/ag_contabiildaderh/" target="_blank"><img src="img/icon-instagram.png" alt="Instagram"></a>
-      </div>
-      <div class="footer-item">
-        <a href="andreiamarciany@hotmail.com" target="_blank"><img src="img/icon-gmail.png" alt="Email"></a>
-      </div>
-      <div class="footer-item">
-        <a href="https://maps.app.goo.gl/uoq3wxX5yuftYqPCA" target="_blank"><img src="img/icon-localização.png" alt="localização"></a>
-      </div>
+        <div class="restricted-area">
+            <button class="btn btn-restricted" onclick="openModal()"><i class="fas fa-lock"></i> Área Restrita</button>
+        </div>
     </div>
-    <div class="footer-address">
-      Endereço: R. Carlos Trévia, 2163 - Camocim Ceara - 2024
+
+    <!-- Modal para senha -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h3>Digite a Senha</h3>
+            <div class="number-pad">
+                <button onclick="addNumber('1')">1</button>
+                <button onclick="addNumber('2')">2</button>
+                <button onclick="addNumber('3')">3</button>
+                <button onclick="addNumber('4')">4</button>
+                <button onclick="addNumber('5')">5</button>
+                <button onclick="addNumber('6')">6</button>
+                <button onclick="addNumber('7')">7</button>
+                <button onclick="addNumber('8')">8</button>
+                <button onclick="addNumber('9')">9</button>
+                <button onclick="addNumber('0')">0</button>
+            </div>
+            <button class="btn close-btn" onclick="closeModal()">Cancelar</button>
+        </div>
     </div>
-    <div class="footer-copyright">
-      © 2024 Todos os direitos reservados
-    </div>
-  </footer>
-  
 
-
-  <script>
-    var menuAberto = false;
-
-    function toggleMenu() {
-      var sidebar = document.getElementById('sidebar');
-
-      if (!menuAberto) {
-        sidebar.style.left = '0px';
-        menuAberto = true;
-      } else {
-        sidebar.style.left = '-200px';
-        menuAberto = false;
-      }
-    }
-
-    function closeMenu() {
-      var sidebar = document.getElementById('sidebar');
-      sidebar.style.left = '-200px';
-      menuAberto = false;
-    }
-
-    document.addEventListener('click', function (event) {
-      var sidebar = document.getElementById('sidebar');
-      if (!event.target.closest('.open-btn') && !event.target.closest('.sidebar')) {
-        sidebar.style.left = '-200px';
-        menuAberto = false;
-      }
-    });
-
-    // Adiciona evento de clique ao ícone do menu para mostrar as opções no modo PC
-    var openBtn = document.querySelector('.open-btn');
-    var headerMenu = document.querySelector('.header-menu');
-
-    openBtn.addEventListener('click', function() {
-      headerMenu.classList.toggle('menu-opened');
-    });
-  </script>
- <div id="btnTopo" onclick="scrollTopFunction()" title="Voltar ao Topo">^</div>
-  <!------script da rolagem------------------------->
-  <script src="script.js"></script>
-  <script>
-    function scrollToSection(sectionId) {
-    var section = document.getElementById(sectionId);
-    var sectionPosition = section.offsetTop;
-    window.scrollTo({
-        top: sectionPosition,
-        behavior: 'smooth' // Isso garante uma rolagem suave
-    });
-}
-  </script>
-  <!---------------------botao top da tela ---------------------------------------->
-  <script>
-    function scrollTopFunction() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // Mostrar ou ocultar botão "Voltar ao Topo" conforme a posição do scroll
-    window.onscroll = function() {
-        var btnTopo = document.getElementById("btnTopo");
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            btnTopo.style.display = "block";
-        } else {
-            btnTopo.style.display = "none";
-        }
-    };
-  </script>
 </body>
 </html>
