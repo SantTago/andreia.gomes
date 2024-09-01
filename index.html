@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planos de Marketing Digital</title>
+    <title>Planos de Social Media</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -58,14 +58,14 @@
             color: #ecf0f1; /* Texto claro */
         }
         .plano p {
-            color: #bdc3c7;
+            color: #00ffce;
             margin: 10px 0;
-            font-size: 15px;
+            font-size: 26px;
         }
         .preco {
             font-size: 22px;
             font-weight: bold;
-            color: #48c9b0; /* Preço em tom verde-água */
+            color: #2ecc71; /* Preço em tom verde intenso */
         }
         .btn {
             display: inline-block;
@@ -315,7 +315,7 @@
         }
 
         function copyPixKey() {
-            const pixKey = "your-pix-key-here";
+            const pixKey = "registracamocim@gmail.com";
             navigator.clipboard.writeText(pixKey).then(() => {
                 alert('Chave Pix copiada para a área de transferência!');
             });
@@ -326,7 +326,7 @@
 
     <div class="header">
         <img src="sua-logo-aqui.png" alt="Logo"> <!-- Espaço para a logo -->
-        <h1>Nossos Planos de Marketing Digital</h1>
+        <h1>Nossos Planos de Social Media</h1>
     </div>
 
     <div class="container">
@@ -334,41 +334,40 @@
 
             <div class="plano">
                 <h2>Pacote Básico</h2>
-                <p class="preco">R$ 200,00</p>
                 <ul class="benefits">
                     <li><i class="fas fa-check"></i> 3 posts semanais</li>
                     <li><i class="fas fa-check"></i> 3 stories semanais</li>
                     <li><i class="fas fa-times"></i> Carrosséis não inclusos</li>
                 </ul>
+                <p class="preco">R$ 200,00</p>
                 <button class="btn" onclick="openPaymentModal()"><i class="fas fa-shopping-cart"></i> Adquirir Agora</button>
             </div>
 
             <div class="plano">
                 <h2>Pacote Júnior</h2>
-                <p class="preco">R$ 250,00</p>
                 <ul class="benefits">
                     <li><i class="fas fa-check"></i> 4 posts semanais</li>
                     <li><i class="fas fa-check"></i> 4 stories semanais</li>
                     <li><i class="fas fa-check"></i> 1 carrossel incluído (substitui um post)</li>
                 </ul>
+                <p class="preco">R$ 250,00</p>
                 <button class="btn" onclick="openPaymentModal()"><i class="fas fa-shopping-cart"></i> Adquirir Agora</button>
             </div>
 
             <div class="plano">
                 <h2>Plano Master</h2>
-                <p class="preco">R$ 350,00</p>
                 <ul class="benefits">
                     <li><i class="fas fa-check"></i> 5 posts semanais</li>
                     <li><i class="fas fa-check"></i> 5 stories semanais</li>
                     <li><i class="fas fa-check"></i> 2 carrosséis inclusos (substituem dois posts)</li>
                     <li><i class="fas fa-check"></i> Descrições personalizadas</li>
                 </ul>
+                <p class="preco">R$ 350,00</p>
                 <button class="btn" onclick="openPaymentModal()"><i class="fas fa-shopping-cart"></i> Adquirir Agora</button>
             </div>
 
             <div class="plano">
                 <h2>Plano Prêmio</h2>
-                <p class="preco">R$ 450,00</p>
                 <ul class="benefits">
                     <li><i class="fas fa-check"></i> 5 posts semanais</li>
                     <li><i class="fas fa-check"></i> 5 stories semanais</li>
@@ -376,6 +375,7 @@
                     <li><i class="fas fa-check"></i> Descrições personalizadas</li>
                     <li><i class="fas fa-check"></i> Criação e publicação automática</li>
                 </ul>
+                <p class="preco">R$ 450,00</p>
                 <button class="btn" onclick="openPaymentModal()"><i class="fas fa-shopping-cart"></i> Adquirir Agora</button>
             </div>
 
@@ -424,16 +424,19 @@
 
     <!-- Modal de Pagamento -->
     <div id="payment-modal" class="payment-modal">
-        <div class="payment-content">
-            <h3>Efetue o Pagamento</h3>
-            <img src="seu-qr-code.png" alt="QR Code do Pix">
-            <button onclick="copyPixKey()">Copiar Chave Pix</button>
-            <p>Chave Pix: your-pix-key-here</p>
-            <p>Nome: Tiago Viana Da Cruz</p>
-            <p>Envie o comprovante para nosso WhatsApp: <a href="https://wa.me/88993464285" target="_blank">88993464285</a></p>
-            <button class="btn close-btn" onclick="closePaymentModal()">Fechar</button>
-        </div>
+    <div class="payment-content">
+        <h3>Efetue o Pagamento</h3>
+        <img src="qr-code/qrcode-pix.png" alt="QR Code do Pix">
+        <button onclick="copyPixKey()">Copiar Chave Pix</button>
+        <p>Nome: Tiago Viana Da Cruz</p>
+        <p>Envie o comprovante para nosso WhatsApp:</p>
+        <!-- Botão para enviar mensagem pelo WhatsApp -->
+        <a href="https://wa.me/88993464285" class="btn" target="_blank">
+            <i class="fab fa-whatsapp"></i> Enviar Comprovante
+        </a>
+        <button class="btn close-btn" onclick="closePaymentModal()">Fechar</button>
     </div>
+</div>
 
 </body>
 </html>
